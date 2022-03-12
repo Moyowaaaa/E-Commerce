@@ -5,6 +5,8 @@ import Link from 'next/link'
 // import Footer from '../components/Footer'
 import { PlusIcon,ChevronDoubleLeftIcon } from "@heroicons/react/solid";
 import axios from 'axios';
+import Subscribe from '../components/Subscribe';
+// import Footer from '../components/Footer';
 
 
 const Store = () => {
@@ -61,7 +63,7 @@ const Store = () => {
 
                 {products && products.map(product => (
                                                 <Link href="/products/[id]" as={`/products/${product.id}`} key={product.id}>
-                          <div className='w-3/12  h-[50vh] ml-8 mt-3 hover:border-2 border-[blue]' key={product.id}>
+                          <div className='w-3/12  h-[50vh] ml-8 mt-3 hover:border-2 border-[blue] cursor-pointer' key={product.id}>
 
   
                               
@@ -111,8 +113,8 @@ const Store = () => {
 
             
             </div>
-
-           
+            
+            
     </div>
   )
 }

@@ -15,3 +15,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.feedjet-backdrop {
+  background: rgba(80, 7, 64, 0.42);
+}
+
+.modal-backdrop{
+  background-color: #F9F9F9;
+}

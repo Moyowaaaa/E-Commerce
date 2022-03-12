@@ -13,22 +13,22 @@ const NewProduct = () => {
     const random = Math.floor(Math.random() * 10);
     const[items, setItems] = useState()
 
-    useEffect(() =>{
-        const newArrivals = () => {
-          try {
-            fetch(`https://fakestoreapi.com/products/${random}`)
-            .then(res=>res.json())
-            .then(json=> {setItems(json)
-                console.log(items)
-            })
-          } catch (error) {
-            console.log(error)
-          }
+    // useEffect(() =>{
+    //     const newArrivals = () => {
+    //       try {
+    //         fetch(`https://fakestoreapi.com/products/${random}`)
+    //         .then(res=>res.json())
+    //         .then(json=> {setItems(json)
+    //             console.log(items)
+    //         })
+    //       } catch (error) {
+    //         console.log(error)
+    //       }
     
       
-        }
-        newArrivals()
-      })
+    //     }
+    //     newArrivals()
+    //   })
 
   return (
     <div>
@@ -55,14 +55,14 @@ const NewProduct = () => {
 
             
 
-            {/* {newItem && newItem.map(item => (
+            {/* {items && items.map(item => (
                 <div className='bg-[none] border-[blue] border-2 w-6/12 flex col items-center justify-center '>
                 <div>
                 <img src={item.image} height={100} width={350} />
                 </div>
                 </div>
-            ))} */}
-            
+            ))}
+             */}
           
 
 
