@@ -40,8 +40,8 @@ const NewProduct = () => {
               <h1 className='text-4xl text-white my-2'>NEW ARRIVALS</h1>
 
 
-              <a href='/store'>
-              <p className='text-base text-white'>Shop Now</p></a>
+              <Link href='/store'>
+              <p className='text-base text-white'>Shop Now</p></Link>
               
             </div>
             </div>

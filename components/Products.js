@@ -1,5 +1,5 @@
 import React from 'react'
-import { Head } from 'next/document'
+// import { Head } from 'next/document'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { PlusIcon, ChevronDoubleLeftIcon } from "@heroicons/react/solid";

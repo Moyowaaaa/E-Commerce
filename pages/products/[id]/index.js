@@ -8,22 +8,22 @@ import Footer from '../../../components/Footer';
 
 
 const product = ({item}) => {
-    const [itemDetails,setItemDetails] = useState()
-    const [close, setClose] = useState(false);
-    const [productInfo, setProductInfo] = useState(true)
-    const [returnPolicy, setReturnPolicy] = useState()
+    // const [itemDetails,setItemDetails] = useState()
+    // const [close, setClose] = useState(false);
+    // const [productInfo, setProductInfo] = useState(true)
+    // const [returnPolicy, setReturnPolicy] = useState()
 
 
 
-    const showInfo = () => {
-        setProductInfo(true)
-        setReturnPolicy(false)
-    }
+    // const showInfo = () => {
+    //     setProductInfo(true)
+    //     setReturnPolicy(false)
+    // }
 
-    const showPolicy = () => {
-        setReturnPolicy(true)
-        setProductInfo(false)
-    }
+    // const showPolicy = () => {
+    //     setReturnPolicy(true)
+    //     setProductInfo(false)
+    // }
 
 
   
@@ -86,16 +86,17 @@ const product = ({item}) => {
                     <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center">Add to Cart</button>
 
                     <div className="pt-[1rem]">
-                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]' onClick={showInfo}>Product Info</p>
-                        <h3 className={`${productInfo ? 'bock':'hidden'}`}>{item.description}</h3>
+                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]'>Product Info</p>
+                        {/* <h3 className={`${productInfo ? 'bock':'hidden'}`}>{item.description}</h3> */}
+                        <h3>{item.description}</h3>
                     </div>
 
 
 
-                    <div className='mt-[1rem]'>
+                    {/* <div className='mt-[1rem]'>
                         <p className='mt-1 font-bold cursor-pointer border-2 border-[blue]' onClick={showPolicy}>Return Policy</p>
                         <p className={`${returnPolicy ? 'bock':'hidden'}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nostrum labore officia eligendi eum quidem voluptates alias nobis fugiat exercitationem ipsa omnis eius non consequuntur error, praesentium soluta sunt assumenda.</p>
-                    </div>
+                    </div> */}
 
 
                     
