@@ -79,7 +79,8 @@ export default function Home() {
 
         <div className='flex flex-wrap '>
             <Link href='/store'><span className='mx-6'>Shop</span></Link>
-           <Link href='/aboutus'><span className='mx-6'>About</span> </Link>
+        
+           <Link href='/aboutus'><span className='mx-6'>About</span></Link>
             <span className='flex'><UserIcon width={20}/> Login</span>
             <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
         </div>
@@ -89,7 +90,7 @@ export default function Home() {
       <div className="h-[100vh] flex items-center justify-center bg-[url('../assets/images/838.jpg')] bg-no-repeat bg-cover">
         <div>
         <h1 className='text-center text-white text-3xl mb-6'>E-commerce</h1>
-        <button className='bg-[black] border-[white] border-2 w-[12rem] text-white h-12' onClick={openStore}>Shop</button>
+        <button className='bg-[blue]  w-[12rem] text-white h-12' onClick={openStore}>Shop</button>
         </div>
        
         </div>
@@ -150,7 +151,7 @@ export default function Home() {
 
           <Link href='/store'>
 
-          <button className='bg-[blue] text-[white] h-12 w-[8rem] justify-center mx-[45vw] mb-6' >Shop Now</button>
+          <button className='bg-[blue] text-[white] h-12 w-[8rem] justify-center mx-[45vw] mb-6'  onClick={openStore} >Shop Now</button>
 
 
           </Link>

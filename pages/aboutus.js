@@ -8,6 +8,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import Subscribe from '../components/Subscribe';
 import { PlusIcon,ChevronDoubleLeftIcon } from "@heroicons/react/solid";
 
 
@@ -46,13 +47,16 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia praesentium dig
           </div>
 
           <hr className='w-8/12 mx-[auto]'/>
-          <p className='w-7/12 mx-[auto] py-6  text-justify'>
+          <p className='w-7/12 mx-[auto] py-6 mb-6  text-justify'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, modi quibusdam provident ratione asperiores molestiae sequi, sapiente porro molestias nesciunt, hic magni id earum. Alias minus voluptatum quasi suscipit vel?
           </p>
        
         
         {/* <Contact /> */}
         {/* <Footer /> */}
+
+        <Subscribe />
+            <Footer />
         </div>
   )
 }
