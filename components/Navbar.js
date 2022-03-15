@@ -12,7 +12,8 @@ const Navbar = () => {
 
         <div className='flex flex-wrap '>
             <Link href='/store'><span className='mx-6'>Shop</span></Link>
-            <a href="/aboutus"><span className='mx-6'>About</span></a>
+            <Link href='/aboutus'><span className='mx-6'>About</span></Link>
+            {/* <a href="/aboutus"><span className='mx-6'>About</span></a> */}
            {/* <Link href='/aboutus'><span className='mx-6'>About</span> </Link> */}
             <span className='flex'><UserIcon width={20}/> Login</span>
             <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
