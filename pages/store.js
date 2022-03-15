@@ -7,6 +7,8 @@ import { PlusIcon,ChevronDoubleLeftIcon } from "@heroicons/react/solid";
 import axios from 'axios';
 import Subscribe from '../components/Subscribe';
 // import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import Contact from '../components/Contact';
 
 
 const Store = () => {
@@ -32,10 +34,10 @@ const Store = () => {
         getProducts()
     },[])
   return (
-    <div>
+    <div className='h-screen'>
 
 
-        <Header />
+        <Navbar />
 
         <Link href="/">
             <div className='flex flex-row cursor-pointer ml-6'>
@@ -44,7 +46,7 @@ const Store = () => {
             </Link>
       
 
-        <div className=' h-[100vh]  mt-12'>
+        <div className=' mt-12'>
 {/* 
              <div className='h-[30rem] border-2 border-[royalblue] w-[25rem]  my-6'>
             {products && products.map(product => (
@@ -82,29 +84,6 @@ const Store = () => {
                 ))}
        
 
-            {/* <div className='w-3/12 border-[blue] border-2 h-[50vh] ml-8 '>
-                
-                <div className='flex flex-col h-3/4 border-2 border-black items-center'></div>'
-                
-                </div> */}
-
-
-            {/* <div className='w-3/12 border-[blue] border-2 h-[50vh] ml-8'></div>
-
-
-            </div>
-
-            <div className='flex flex-row flex-wrap justify-center w-full mb-6'>
-                
-            
-
-            <div className='w-3/12 border-[blue] border-2 h-[50vh] ml-8'></div>
-
-            <div className='w-3/12 border-[blue] border-2 h-[50vh] ml-8'></div>
-
-
-            <div className='w-3/12 border-[blue] border-2 h-[50vh] ml-8'></div> */}
-
 
             </div>
 
@@ -113,8 +92,87 @@ const Store = () => {
 
             
             </div>
+
             
-            
+            {/* <Contact /> */}
+
+
+
+            <div className='w-full bg-[black] flex flex-row'>
+
+
+                <div className='w-5/12  h-[auto]'>
+                <div className=' bg-[black] text-white '>
+        <h2 className='text-3xl text-center py-6'>Contact Us</h2>
+        <div className='flex flex-col w-full ml-[6rem] pt-12 ' >
+            <div className='flex flex-row w-full'>
+                <div className='w-6/12'><label>FirstName</label>
+                <br/>
+                <input
+                className='mb-4 py-1 pl-2 text-black w-full'
+                 />
+                </div>
+
+
+
+                <div className='ml-12 w-6/12'><label>LastName</label>
+                <br/>
+                <input
+                className='mb-4 py-1 px-2 text-black w-full' />
+                </div>
+
+
+
+                </div>
+
+
+                <div className='flex flex-col w-full'>
+                    <label>Enter Your Email</label>
+                    <input 
+                    className='mb-4 py-1 px-2 text-black'/>
+
+                    <label>Enter your Subject</label>
+                    <input 
+                    className='mb-4 py-2 px-2 text-black'/>
+
+                    <label>Enter Your Message</label>
+                    <textarea className='resize-none h-[10rem] pt-2 px-2 text-black'></textarea>
+
+                </div>
+
+
+
+                <button className='mt-2 mb-6 bg-[none] w-16 border-2 border-white text-white'>Send</button>
+
+                
+            </div>
+            </div>
+                </div>
+
+
+
+                <div className='ml-[10rem] w-5/12'>
+                    <div className='bg-black h-[30rem] flex flex-col items-center mt-6'>
+                    <h2 className='text-4xl text-white flex justify-center'>JOIN OUR MAILING LIST</h2>
+        <h4 className='text-xl text-white mb-6'>And Never Miss An Update</h4>
+
+
+        <div className='flex flex-col justify-center text-white w-8/12 text-center'>
+        <label required>Enter your Email Here</label>
+        <input 
+        placeholder="Email"
+        className='outline-white border-2 border-white mt-6 w-12/12 h-12 text-black py-[auto] pl-4 pr-4'
+        />
+        <button className='outline-white border-2 border-white mt-6 w-12/12 h-12'>Subscribe </button>
+            </div>
+
+
+                    </div>
+                </div>
+
+              
+            </div>
+        <Footer className='absolute' />
     </div>
   )
 }

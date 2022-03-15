@@ -77,21 +77,36 @@ const product = ({item}) => {
                     <span className='hover:border-b border-[blue]'>Store</span></Link>/
                     <span className='font-thin hover:border-b border-[blue]'>{item.title}</span></p></div>
 
-                <div className="h-5/6 w-10/12 mx-[auto] flex flex-col items-center justify-center mt-12  my-12">
+                    
+
+                    
+
+                <div className="h-5/6 w-10/12 mx-[auto] py-[6rem] flex flex-col items-center justify-center my-12">
                     <img src={item.image} />
                 </div>
                 </div>
 
 
 
-                <div className="flex flex-col w-5/12 h-5/6 my-[auto] pl-6">
+                <div className="flex flex-col w-5/12 h-5/6 my-[auto] pl-6 py-[6rem]">
 
                     <h1 className="text-3xl mb-6 font-bold">{item.title}</h1>
                     {/* <p className="text-sm my-6">Product Id</p> */}
 
-                    <h2 className="my-[2rem] font-bold ">${item.price}</h2>
+                    <h2 className="mb-[2rem] font-bold ">${item.price}</h2>
 
-                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center">Add to Cart</button>
+                    <div className='mb-2'>
+                        <h2>Quantity</h2>
+                        <input type="number" 
+                        className='w-full outline-black border-2 border-[black]'
+                        min={1}
+                        
+                        />
+                    </div>
+
+                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3">Add to Cart</button>
+
+                    <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
 
                     <div className="pt-[1rem]">
                         <p className='my-3 font-bold cursor-pointer border-2 border-[blue]'>Product Info</p>
