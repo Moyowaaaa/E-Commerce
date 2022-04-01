@@ -56,7 +56,7 @@ const product = ({item}) => {
 
         {/* <Header /> */}
         <Link href="/store">
-            <div className='flex flex-row cursor-pointer ml-6'>
+            <div className='flex flex-row cursor-pointer ml-4 lg:ml-6'>
         <ChevronDoubleLeftIcon width={30}/><span className='my-2'>Back</span>
         </div>
             </Link>
@@ -64,10 +64,10 @@ const product = ({item}) => {
           
 
 
-            <div className="h-5/6  w-6/12 mx-[auto]  flex">
+            <div className="h-5/6 w-11/12 lg:w-6/12 mx-[auto]  flex flex-col lg:flex-row">
            
-                <div className="flex flex-col w-7/12 h-full ">
-                <div className="cursor-pointer"><p>
+                <div className="flex flex-col w-11/12 lg:w-7/12 h-full ">
+                <div className="cursor-pointer w-full "><p>
                     
                     
                     <Link href="/"><span className='hover:border-b border-[blue]'>Home/</span></Link>
@@ -81,14 +81,14 @@ const product = ({item}) => {
 
                     
 
-                <div className="h-5/6 w-10/12 mx-[auto] py-[6rem] flex flex-col items-center justify-center my-12">
+                <div className="lg:h-5/6 w-10/12 mx-[auto] py-8 lg:py-[6rem] flex flex-col items-center justify-center my-12">
                     <img src={item.image} />
                 </div>
                 </div>
 
 
 
-                <div className="flex flex-col w-5/12 h-5/6 my-[auto] pl-6 py-[6rem]">
+                <div className="flex flex-col w-11/12 lg:w-5/12 h-5/6 my-[auto] lg:pl-6 py-[6rem]">
 
                     <h1 className="text-3xl mb-6 font-bold">{item.title}</h1>
                     {/* <p className="text-sm my-6">Product Id</p> */}

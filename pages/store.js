@@ -40,7 +40,7 @@ const Store = () => {
         <Navbar />
 
         <Link href="/">
-            <div className='flex flex-row cursor-pointer ml-6'>
+            <div className='flex flex-row cursor-pointer ml-2 lg:ml-6'>
         <ChevronDoubleLeftIcon width={30}/><span className='my-2'>Back</span>
         </div>
             </Link>
@@ -65,7 +65,7 @@ const Store = () => {
 
                 {products && products.map(product => (
                                                 <Link href="/products/[id]" as={`/products/${product.id}`} key={product.id}>
-                          <div className='w-3/12  h-[50vh] ml-8 mt-3 hover:border-2 border-[blue] cursor-pointer' key={product.id}>
+                          <div className='w-full lg:w-3/12  h-[50vh] lg:ml-8 mt-3 hover:border-2 border-[blue] cursor-pointer' key={product.id}>
 
   
                               
@@ -98,7 +98,7 @@ const Store = () => {
 
 
 
-            <div className='w-full bg-[black] flex flex-row'>
+            {/* <div className='w-full bg-[black] flex flex-row'>
 
 
                 <div className='w-5/12  h-[auto]'>
@@ -171,7 +171,9 @@ const Store = () => {
                 </div>
 
               
-            </div>
+            </div> */}
+
+            <Subscribe />
         <Footer className='absolute' />
     </div>
   )

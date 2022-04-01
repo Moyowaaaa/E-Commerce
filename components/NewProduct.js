@@ -8,9 +8,9 @@ import Image from 'next/image'
 
 
 
-const NewProduct = () => {
+const NewProduct = ({newItem}) => {
     const [newProducts, setNewProducts] = useState()
-    const random = Math.floor(Math.random() * 10);
+ 
     const[items, setItems] = useState()
 
     // useEffect(() =>{
@@ -30,12 +30,13 @@ const NewProduct = () => {
     //     newArrivals()
     //   })
 
+    
   return (
     <div>
 
 
-<div className='h-[40rem]  flex flex-row'>
-          <div className=' w-6/12 bg-[blue] flex flex-col items-center justify-center'>
+<div className='h-[40rem]  flex flex-row flex-col-reverse lg:flex-row'>
+          <div className='w-full  lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
             <div className='text-center'> 
               <h1 className='text-4xl text-white my-2'>NEW ARRIVALS</h1>
 
@@ -55,14 +56,14 @@ const NewProduct = () => {
 
             
 
-            {/* {items && items.map(item => (
-                <div className='bg-[none] border-[blue] border-2 w-6/12 flex col items-center justify-center '>
+           
+                <div className='bg-[none] border-[blue] border-2 h-full w-full lg:w-6/12 flex col items-center justify-center '>
                 <div>
-                <img src={item.image} height={100} width={350} />
+                <p>{newItem}</p>
                 </div>
                 </div>
-            ))}
-             */}
+          
+            
           
 
 
@@ -71,5 +72,15 @@ const NewProduct = () => {
     </div>
   )
 }
+// export const newArrivals = async(random) => {
+//   const res = await fetch(`https://fakestoreapi.com/products/${random}`)
 
+//   const newItem = await res.json()
+
+//   return{
+//     props: {
+//       newItem
+//     }
+//   }
+// }
 export default NewProduct

@@ -10,7 +10,7 @@ const Navbar = () => {
         <h1 className='w-9/12'>E-commerce</h1>
 
 
-        <div className='flex flex-wrap '>
+        <div className='flex flex-wrap hidden lg:flex '>
             <Link href='/store'><span className='mx-6'>Shop</span></Link>
             <Link href='/aboutus'><span className='mx-6'>About</span></Link>
             {/* <a href="/aboutus"><span className='mx-6'>About</span></a> */}
