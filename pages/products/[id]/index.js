@@ -81,7 +81,7 @@ const product = ({item}) => {
 
                     
 
-                <div className="lg:h-5/6 w-10/12 mx-[auto] py-8 lg:py-[6rem] flex flex-col items-center justify-center my-12">
+                <div className="lg:h-5/6 w-10/12 mx-[auto] py-8 lg:py-[6rem] flex flex-col items-center justify-center my-12 ">
                     <img src={item.image} />
                 </div>
                 </div>

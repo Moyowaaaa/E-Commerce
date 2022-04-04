@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Footer = () => {
+  
   return (
     <div className='lg:h-6/6 bottom-0 w-[100%]'>
 
@@ -19,7 +20,7 @@ const Footer = () => {
         <p>Terms and Conditions</p> */}
         <div className='w-12/12 justify-center flex col  text-center '> 
 
-<h2 className='text-base flex flex-col justify-center pt-12 pb-6'>Copyright &copy; Moyowa 2022</h2>
+<h2 className='text-base flex flex-col justify-center pt-12 pb-6'>Copyright &copy; Moyowa <div id="demo"></div></h2>
 
 
 </div>

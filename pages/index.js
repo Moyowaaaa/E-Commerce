@@ -28,41 +28,76 @@ export default function Home() {
   
   
     useEffect(() => {
-      const showCase = () => {
-        try {
-          fetch('https://fakestoreapi.com/products?limit=3')
-          .then(res=>res.json())
-          // .then(json=>console.log(json))
-          .then(json=> {
-            setProducts(json)
-          })
-        } catch (error) {
-          console.log(error)
-        }
+      async function showCase(){
+    try{
+      const response = await axios.get('https://fakestoreapi.com/products?limit=3')
+      console.log(response.data)
+      setProducts(response.data)
+    }catch(error){
+      console.log(error)
+    }
       }
-      showCase()
-    })
-  
-    useEffect(() => {
-      const newArrivals = () => {
+
+      async function cart(){
         try{
-          fetch(`https://fakestoreapi.com/products/${random}`)
-          .then(res =>res.json())
-         
-          .then(json => {
-            console.log(json)
-          })
+          fetch('https://fakestoreapi.com/carts/5')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
         }catch(error){
           console.log(error)
         }
-        return{
-          props:{
-            newItem
-          }
-        }
       }
-      newArrivals()
+      // const showCase = () => {
+      //   try {
+      //     fetch('https://fakestoreapi.com/products?limit=3')
+      //     .then(res=>res.json())
+      //     // .then(json=>console.log(json))
+      //     .then(json=> {
+      //       setProducts(json)
+      //     })
+      //   } catch (error) {
+      //     console.log(error)
+      //   }
+      // }
+    //   async function getNewProducts() {
+    //     try {
+    //         const res = await axios.get(`https://fakestoreapi.com/products/${random}`)
+    //             console.log(res.data)
+                
+    //     } catch (error) {
+    //         console.log(error)
+    //     }return{
+    //         props:{
+    //             newProducts
+    //         }   
+    //     }
+    // }
+
+      showCase()
+      // getNewProducts()
+      cart()
     },[])
+  
+    // useEffect(() => {
+    //   const newArrivals = () => {
+    //     try{
+    //       fetch(`https://fakestoreapi.com/products/${random}`)
+    //       .then(res =>res.json())
+         
+    //       .then(json => {
+    //         console.log(json)
+    //       })
+    //     }catch(error){
+    //       console.log(error)
+    //     }
+    //     return{
+    //       props:{
+    //         newItem
+    //       }
+    //     }
+    //   }
+    //   newArrivals()
+    // },[])
   
   
   
@@ -95,28 +130,30 @@ export default function Home() {
 
 
       <div className='h-[4rem] pl-6  text-[white] bg-[blue] flex items-center '>
-        <h1 className='w-9/12'>E-commerce</h1>
+        <h1 className='w-9/12'>Peter's Place</h1>
 
 
         <div className='flex hidden flex-wrap lg:flex'>
             <Link href='/store'><span className='mx-6'>Shop</span></Link>
         
-           <Link href='/aboutus'><span className='mx-6'>About</span></Link>
+           <Link href='/about'><span className='mx-6'>About</span></Link>
             <span className='flex'><UserIcon width={20}/> Login</span>
             <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
         </div>
+
+        <button className='flex lg:hidden'>[-__-]</button>
         </div>
 
 <div className="h-[100vh] flex items-center justify-center bg-[url('../assets/images/838.jpg')] bg-no-repeat bg-cover">
         <div>
-        <h1 className='text-center text-white text-3xl mb-6'>E-commerce</h1>
+        <h1 className='text-center text-white text-3xl mb-6'>Peter's Place</h1>
         <button className='bg-[blue]  w-[12rem] text-white h-12' onClick={openStore}>Shop</button>
         </div>
        
         </div>
 
 
-        <NewProduct newItem={newItem} />
+        <NewProduct newItem={newProducts} />
 
 
         <div className=' mt-4 justify-center'>

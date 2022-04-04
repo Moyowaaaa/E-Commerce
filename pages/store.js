@@ -15,24 +15,41 @@ const Store = () => {
     const[products, setProducts] = useState()
     useEffect(() => {
         
-        const getProducts = () => {
-            try {
-                fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=> {setProducts(json)
-                console.log(products)
-            })
-            } catch (error) {
-                console.log(error)
-            }
-            return{
-                props:{
-                    products
-                }
-            }
+    //     const getProducts = () => {
+    //         try {
+    //             fetch('https://fakestoreapi.com/products')
+    //         .then(res=>res.json())
+    //         .then(json=> {setProducts(json)
+    //             console.log(products)
+    //         })
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //         return{
+    //             props:{
+    //                 products
+    //             }
+    //         }
+    //     }
+    //     getProducts()
+    // },[])
+
+    async function getProducts() {
+        try {
+            const res = await axios.get('https://fakestoreapi.com/products')
+            console.log(res.data)
+            setProducts(res.data)
+        } catch (error) {
+            console.log(error)
         }
-        getProducts()
-    },[])
+    };
+  
+    getProducts()
+
+});
+
+
+
   return (
     <div className='h-screen'>
 
@@ -70,7 +87,7 @@ const Store = () => {
   
                               
                 
-                <div className='flex flex-col h-3/4  py-[auto] items-center justify-center'><img src={product.image} height={100} width={150}/></div>
+                <div className='flex flex-col h-3/4  py-[auto] items-center justify-center bg-[#fff]'><img src={product.image} height={100} width={150}/></div>
                 <div className='flex flex-col jusitfy-around w-11/12 mx-[auto]'>
                     {product.title}
                     <br/>

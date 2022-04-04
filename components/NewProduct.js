@@ -8,27 +8,47 @@ import Image from 'next/image'
 
 
 
-const NewProduct = ({newItem}) => {
-    const [newProducts, setNewProducts] = useState()
+const NewProduct = ({newProducts}) => {
+    // const [newProducts, setNewProducts] = useState()
  
     const[items, setItems] = useState()
+    const random = Math.floor(Math.random() * 10);
 
-    // useEffect(() =>{
-    //     const newArrivals = () => {
-    //       try {
-    //         fetch(`https://fakestoreapi.com/products/${random}`)
-    //         .then(res=>res.json())
-    //         .then(json=> {setItems(json)
-    //             console.log(items)
-    //         })
-    //       } catch (error) {
-    //         console.log(error)
-    //       }
+    useEffect(() =>{
+        // const newArrivals = () => {
+        //   try {
+        //     fetch(`https://fakestoreapi.com/products/${random}`)
+        //     .then(res=>res.json())
+        //     // .then(json=> {setItems(json)
+        //     //     console.log(items)
+        //     // })
+        //     .then(json => {
+        //       console.log(json)
+           
+        //     })
+        //   } catch (error) {
+        //     console.log(error)
+        //   }
     
       
-    //     }
-    //     newArrivals()
-    //   })
+        // }
+        // newArrivals()
+
+        // async function getNewProduct() {
+        //     try {
+        //         const res = await axios.get(`https://fakestoreapi.com/products/${random}`)
+        //         console.log(res.data)
+        //         setNewProducts(res.data)
+                
+        //     } catch (error) {
+        //         console.log(error)
+        //     }
+        // }
+        // getNewProduct()
+      })
+
+
+      
 
     
   return (
@@ -38,11 +58,12 @@ const NewProduct = ({newItem}) => {
 <div className='h-[40rem]  flex flex-row flex-col-reverse lg:flex-row'>
           <div className='w-full  lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
             <div className='text-center'> 
-              <h1 className='text-4xl text-white my-2'>NEW ARRIVALS</h1>
+              {/* <h1 className='text-4xl text-white my-2'>NEW ARRIVALS</h1>
 
 
               <Link href='/store'>
-              <p className='text-base text-white'>Shop Now</p></Link>
+              <p className='text-base text-white'>Shop Now</p></Link> */}
+              
               
             </div>
             </div>
@@ -57,11 +78,9 @@ const NewProduct = ({newItem}) => {
             
 
            
-                <div className='bg-[none] border-[blue] border-2 h-full w-full lg:w-6/12 flex col items-center justify-center '>
-                <div>
-                <p>{newItem}</p>
-                </div>
-                </div>
+            <div className='w-full lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
+              {/* {newProducts.title} */}
+              </div>
           
             
           
