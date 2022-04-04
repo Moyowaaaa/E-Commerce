@@ -130,7 +130,7 @@ export default function Home() {
 
 
       <div className='h-[4rem] pl-6  text-[white] bg-[blue] flex items-center '>
-        <h1 className='w-9/12'>Peter's Place</h1>
+        <h1 className='w-9/12'>Peter&apos;s Place</h1>
 
 
         <div className='flex hidden flex-wrap lg:flex'>
@@ -146,7 +146,7 @@ export default function Home() {
 
 <div className="h-[100vh] flex items-center justify-center bg-[url('../assets/images/838.jpg')] bg-no-repeat bg-cover">
         <div>
-        <h1 className='text-center text-white text-3xl mb-6'>Peter's Place</h1>
+        <h1 className='text-center text-white text-3xl mb-6'>Peter&apos;s Place</h1>
         <button className='bg-[blue]  w-[12rem] text-white h-12' onClick={openStore}>Shop</button>
         </div>
        

@@ -5,7 +5,7 @@ import Link from 'next/link'
 const HomeNavbar = () => {
   return (
     <div className='h-[4rem] pl-6  text-[white] flex items-center '>
-        <h1 className='w-9/12'>Peter's Place</h1>
+        <h1 className='w-9/12'>Peter&apos;Place</h1>
 
 
         <div className='flex flex-wrap '>
