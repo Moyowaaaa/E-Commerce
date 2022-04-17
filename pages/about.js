@@ -9,7 +9,7 @@ import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import Foot from "../components/Foot";
 
-const about = () => {
+const About = () => {
   return (
     <div>
       <div className="h-screen w-full  flex flex-col">
@@ -79,4 +79,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

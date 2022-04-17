@@ -7,11 +7,11 @@ import Subscribe from '../../../components/Subscribe';
 import Footer from '../../../components/Footer';
 
 
-const product = ({item}) => {
-    // const [itemDetails,setItemDetails] = useState()
-    // const [close, setClose] = useState(false);
-    // const [productInfo, setProductInfo] = useState(true)
-    // const [returnPolicy, setReturnPolicy] = useState()
+const Product = ({item}) => {
+    const [itemDetails,setItemDetails] = useState()
+    const [close, setClose] = useState(false);
+    const [productInfo, setProductInfo] = useState(true)
+    const [returnPolicy, setReturnPolicy] = useState()
 
 
 
@@ -109,17 +109,17 @@ const product = ({item}) => {
                     <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
 
                     <div className="pt-[1rem]">
-                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]'>Product Info</p>
-                        <h3>{item.description}</h3>
+                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]'onClick={showInfo}>Product Info</p>
+                        <h3 className={`${productInfo ? 'bock':'hidden'}`} >{item.description}</h3>
                     
                     </div>
 
 
 
-                    {/* <div className='mt-[1rem]'>
+                    <div className='mt-[1rem]'>
                         <p className='mt-1 font-bold cursor-pointer border-2 border-[blue]' onClick={showPolicy}>Return Policy</p>
                         <p className={`${returnPolicy ? 'bock':'hidden'}`} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nostrum labore officia eligendi eum quidem voluptates alias nobis fugiat exercitationem ipsa omnis eius non consequuntur error, praesentium soluta sunt assumenda.</p>
-                    </div> */}
+                    </div>
 
 
                     
@@ -150,4 +150,4 @@ export const getServerSideProps = async(context) => {
 
 
 // 
-export default product
+export default Product

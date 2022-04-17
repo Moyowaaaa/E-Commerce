@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
 
 <div className='h-[4rem] pl-6 bg-[blue]  text-[white] flex items-center '>
-        <h1 className='w-9/12'>Peter &aposs  Place</h1>
+        <h1 className='w-9/12'>Peter&apos;s  Place</h1>
 
 
         <div className='flex flex-wrap hidden lg:flex '>

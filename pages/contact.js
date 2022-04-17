@@ -9,7 +9,7 @@ import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import Foot from "../components/Foot";
 
-const contact = () => {
+const Contact = () => {
   return (
     <div>
         <div className="inline-flex flex-row w-full cursor-pointer">
@@ -84,4 +84,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
