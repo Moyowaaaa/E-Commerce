@@ -167,7 +167,7 @@ export default function Home() {
 
         <div className=' mt-4 justify-center'>
 
-          <h1 className='text-2xl text-center '>The Best deals on Offer! <hr className='w-3/12 border-[blue]  mx-auto'></hr></h1>
+          <h1 className='text-2xl text-center '>The Best deals on Offer! <hr className='w-8/12 lg:w-3/12 border-[blue]  mx-auto'></hr></h1>
 
 
           <div className='flex-wrap flex-row flex justify-center'>
