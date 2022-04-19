@@ -8,7 +8,9 @@ import Image from 'next/image'
 
 
 
-const NewProduct = ({newItem}) => {
+const NewProduct = ({newProduct}) => {
+
+  const random = Math.floor(Math.random() * 10);
     const [newProducts, setNewProducts] = useState()
  
     // const[items, setItems] = useState()
@@ -16,7 +18,7 @@ const NewProduct = ({newItem}) => {
   
 
     useEffect(() =>{
-    setNewProducts(newItem)
+    // setNewProducts(newItem)
         // const newArrivals = () => {
         //   try {
         //     fetch(`https://fakestoreapi.com/products/${random}`)
@@ -47,7 +49,7 @@ const NewProduct = ({newItem}) => {
         //     }
         // }
         // getNewProduct()
-        console.log(newProducts)
+        // console.log(newProducts)
         
       })
 
@@ -83,7 +85,7 @@ const NewProduct = ({newItem}) => {
 
            
             <div className='w-full lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
-             
+              <h2>{newProduct.title}</h2>
               </div>
           
             
@@ -95,5 +97,14 @@ const NewProduct = ({newItem}) => {
     </div>
   )
 }
+export const getServerSideProps = async(random) => {
+  const res = await fetch(`https://fakestoreapi.com/products/${random}`)
+  const newProduct = await res.json()
 
+  return {
+    props: {
+      newProduct
+    }
+  }
+}
 export default NewProduct

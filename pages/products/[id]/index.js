@@ -13,6 +13,9 @@ const Product = ({item}) => {
     const [productInfo, setProductInfo] = useState(true)
     const [returnPolicy, setReturnPolicy] = useState()
 
+
+
+    
  
 
  

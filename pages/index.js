@@ -189,7 +189,7 @@ export default function Home() {
            </div>
 
            <div className='flex flex-col items-center my-6 '>
-           <button className='w-2/12 p-4 border-red border-2 bg-[blue] text-white' onClick={openStore}>Shop</button>
+           <button className='w-6/12 lg:w-2/12 p-4 border-red border-2 bg-[blue] text-white' onClick={openStore}>Shop</button>
            </div>
 
            </div>
