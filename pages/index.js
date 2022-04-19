@@ -22,12 +22,16 @@ export default function Home() {
     const[newItem, setNewItem] = useState()
     const [newProducts, setNewProducts] = useState()
     const [close, setClose] = useState(false);
-    const random = Math.floor(Math.random() * 10);
+    // const random = Math.floor(Math.random() * 10);
   
   
   
   
     useEffect(() => {
+      const random = Math.floor(Math.random() * 10);
+      console.log(random)
+
+
       async function showCase(){
     try{
       const response = await axios.get('https://fakestoreapi.com/products?limit=3')
@@ -38,15 +42,28 @@ export default function Home() {
     }
       }
 
-      async function cart(){
+
+      async function newItem() {
         try{
-          fetch('https://fakestoreapi.com/carts/5')
-            .then(res=>res.json())
-            .then(json=>console.log(json))
-        }catch(error){
+          const response = await axios.get(`https://fakestoreapi.com/products/${random}`)
+          console.log(response.data)
+          setNewItem(response.data)
+          
+        }
+        catch(error){
           console.log(error)
         }
       }
+
+      // async function cart(){
+      //   try{
+      //     fetch('https://fakestoreapi.com/carts/5')
+      //       .then(res=>res.json())
+      //       .then(json=>console.log(json))
+      //   }catch(error){
+      //     console.log(error)
+      //   }
+      // }
       // const showCase = () => {
       //   try {
       //     fetch('https://fakestoreapi.com/products?limit=3')
@@ -75,30 +92,11 @@ export default function Home() {
 
       showCase()
       // getNewProducts()
-      cart()
+      newItem()
+      
     },[])
   
-    // useEffect(() => {
-    //   const newArrivals = () => {
-    //     try{
-    //       fetch(`https://fakestoreapi.com/products/${random}`)
-    //       .then(res =>res.json())
-         
-    //       .then(json => {
-    //         console.log(json)
-    //       })
-    //     }catch(error){
-    //       console.log(error)
-    //     }
-    //     return{
-    //       props:{
-    //         newItem
-    //       }
-    //     }
-    //   }
-    //   newArrivals()
-    // },[])
-  
+
   
   
     function closeModal () {
@@ -129,20 +127,30 @@ export default function Home() {
       </Head>
 
 
-      <div className='h-[4rem] pl-6  text-[white] bg-[blue] flex items-center '>
-        <h1 className='w-9/12'>Peter&apos;s Place</h1>
+  
 
 
-        <div className='flex hidden flex-wrap lg:flex'>
-            <Link href='/store'><span className='mx-6'>Shop</span></Link>
+        <div className='w-full border-2 border-[blue] h-[4rem] text-[white] bg-[blue]'>
+        <div className='flex  justify-around h-full'>
+          <Link href='/'>
+            <div className='w-4/12  cursor-pointer flex items-center'>
+        <h1 className='w-max hover:border-b-2 hover:border-[white]'>Peter&apos;s  Place</h1>
+        </div>
+        </Link>
+
+        <div className='flex flex-row items-center'>
+        <Link href='/about'><span className=' mx-12 hover:border-b-2 hover:border-[white] cursor-pointer'>About</span></Link>
+        <Link href='/store'><span className='mr-8 hover:border-b-2 hover:border-[white] cursor-pointer'>Shop</span></Link>
+        <span className='ml-6 hover:border-b-2 hover:border-[white] cursor-pointer'><ShoppingCartIcon width={20} height={30}/></span>
+        </div>
+
         
-           <Link href='/about'><span className='mx-6'>About</span></Link>
-            <span className='flex'><UserIcon width={20}/> Login</span>
-            <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
         </div>
 
-        <button className='flex lg:hidden'>[-__-]</button>
+
         </div>
+
+        {/* -------------------- */}
 
 <div className="h-[100vh] flex items-center justify-center bg-[url('../assets/images/838.jpg')] bg-no-repeat bg-cover">
         <div>
@@ -151,14 +159,15 @@ export default function Home() {
         </div>
        
         </div>
+        {/* -------------------------- */}
 
 
-        <NewProduct newItem={newProducts} />
+        {/* <NewProduct newItem={newItem} /> */}
 
 
         <div className=' mt-4 justify-center'>
 
-          <h1 className='text-2xl text-center'>The Best deals on Offer!</h1>
+          <h1 className='text-2xl text-center '>The Best deals on Offer! <hr className='w-3/12 border-[blue]  mx-auto'></hr></h1>
 
 
           <div className='flex-wrap flex-row flex justify-center'>
@@ -178,7 +187,11 @@ export default function Home() {
            ))} 
 
            </div>
-           
+
+           <div className='flex flex-col items-center my-6 '>
+           <button className='w-2/12 p-4 border-red border-2 bg-[blue] text-white' onClick={openStore}>Shop</button>
+           </div>
+
            </div>
 
 

@@ -8,13 +8,15 @@ import Image from 'next/image'
 
 
 
-const NewProduct = ({newProducts}) => {
-    // const [newProducts, setNewProducts] = useState()
+const NewProduct = ({newItem}) => {
+    const [newProducts, setNewProducts] = useState()
  
-    const[items, setItems] = useState()
-    const random = Math.floor(Math.random() * 10);
+    // const[items, setItems] = useState()
+    // const random = Math.floor(Math.random() * 10);
+  
 
     useEffect(() =>{
+    setNewProducts(newItem)
         // const newArrivals = () => {
         //   try {
         //     fetch(`https://fakestoreapi.com/products/${random}`)
@@ -45,6 +47,8 @@ const NewProduct = ({newProducts}) => {
         //     }
         // }
         // getNewProduct()
+        console.log(newProducts)
+        
       })
 
 
@@ -56,7 +60,7 @@ const NewProduct = ({newProducts}) => {
 
 
 <div className='h-[40rem]  flex flex-row flex-col-reverse lg:flex-row'>
-          <div className='w-full  lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
+          <div className='w-6/12  lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
             <div className='text-center'> 
               {/* <h1 className='text-4xl text-white my-2'>NEW ARRIVALS</h1>
 
@@ -69,7 +73,7 @@ const NewProduct = ({newProducts}) => {
             </div>
 
 
-            {/* {items && items.map(item => (<h2>{item.title}</h2>))} */}
+            
 
 
        
@@ -79,7 +83,7 @@ const NewProduct = ({newProducts}) => {
 
            
             <div className='w-full lg:w-6/12 bg-[blue] flex flex-col items-center justify-center'>
-              {/* {newProducts.title} */}
+             
               </div>
           
             
@@ -91,15 +95,5 @@ const NewProduct = ({newProducts}) => {
     </div>
   )
 }
-// export const newArrivals = async(random) => {
-//   const res = await fetch(`https://fakestoreapi.com/products/${random}`)
 
-//   const newItem = await res.json()
-
-//   return{
-//     props: {
-//       newItem
-//     }
-//   }
-// }
 export default NewProduct

@@ -13,41 +13,6 @@ const Product = ({item}) => {
     const [productInfo, setProductInfo] = useState(true)
     const [returnPolicy, setReturnPolicy] = useState()
 
-
-
-    const showInfo = () => {
-        setProductInfo(true)
-        setReturnPolicy(false)
-    }
-
-    const showPolicy = () => {
-        setReturnPolicy(true)
-        setProductInfo(false)
-    }
-
-
-  
-
-
-    // useEffect(() => {
-    //     const getServerSideProps = async(context) => {
-    //         try {
-    //         const res = await fetch(`https://fakestoreapi.com/products/${context.params.id}`)
-    //         .then(res=>res.json())
-    //         .then(res=>console.log(json))
-    //         // .then(json=> {setItemDetails(json)
-    //         //     console.log(res)
-    //         // })
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-            
-        
-      
-    // }
-    // getServerSideProps()
-    // })
-
  
 
  
@@ -109,7 +74,7 @@ const Product = ({item}) => {
                     <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
 
                     <div className="pt-[1rem]">
-                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]'onClick={showInfo}>Product Info</p>
+                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]' onClick={() => {setProductInfo(!productInfo); setReturnPolicy(false)}}>Product Info</p>
                         <h3 className={`${productInfo ? 'bock':'hidden'}`} >{item.description}</h3>
                     
                     </div>
@@ -117,7 +82,7 @@ const Product = ({item}) => {
 
 
                     <div className='mt-[1rem]'>
-                        <p className='mt-1 font-bold cursor-pointer border-2 border-[blue]' onClick={showPolicy}>Return Policy</p>
+                        <p className='mt-1 font-bold cursor-pointer border-2 border-[blue]' onClick={() => {setReturnPolicy(!returnPolicy); setProductInfo(false)}}>Return Policy</p>
                         <p className={`${returnPolicy ? 'bock':'hidden'}`} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nostrum labore officia eligendi eum quidem voluptates alias nobis fugiat exercitationem ipsa omnis eius non consequuntur error, praesentium soluta sunt assumenda.</p>
                     </div>
 
