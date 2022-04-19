@@ -12,7 +12,12 @@ import Contact from '../components/Contact';
 
 
 const Store = () => {
-    const[products, setProducts] = useState()
+    const[products, setProducts] = useState();
+    const [ searchValue, setSearchValue] = useState('')
+    const search =(e) => {
+        setSearchValue(e.target.value)
+    }
+
     useEffect(() => {
         
     //     const getProducts = () => {
@@ -54,7 +59,7 @@ const Store = () => {
     <div className='h-screen'>
 
 
-        <Navbar />
+        <Navbar search={search} />
 
         <Link href="/">
             <div className='flex flex-row cursor-pointer ml-2 lg:ml-6'>
@@ -76,9 +81,11 @@ const Store = () => {
        
             </div> */}
 
+           
+
 
             <div className='flex flex-row flex-wrap justify-center w-full mb-3'>
-
+{/* 
 
                 {products && products.map(product => (
                                                 <Link href="/products/[id]" as={`/products/${product.id}`} key={product.id}>
@@ -98,8 +105,30 @@ const Store = () => {
                     
                 </div>
                 </Link>
-                ))}
-       
+                ))} */}
+
+
+                {products?.filter((product) => {
+                   return product.title.toLowerCase().includes(searchValue.toLowerCase()) 
+                }).map(product => (
+                    <Link href="/products/[id]" as={`/products/${product.id}`} key={product.id}>
+                    <div className='w-full lg:w-3/12  h-[50vh] lg:ml-8 mt-3 hover:border-2 border-[blue] cursor-pointer' key={product.id}>
+
+
+                        
+          
+          <div className='flex flex-col h-3/4  py-[auto] items-center justify-center bg-[#fff]'><img src={product.image} height={100} width={150}/></div>
+          <div className='flex flex-col jusitfy-around w-11/12 mx-[auto]'>
+              {product.title}
+              <br/>
+              <p className='font-bold my-[auto]'>{product.price}$</p>
+              </div>
+              
+
+              
+          </div>
+          </Link>   )) 
+                }
 
 
             </div>
