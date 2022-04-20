@@ -71,7 +71,7 @@ const About = () => {
 
 
           <p className="py-4 pb-12">
-          Tortor dignissim convallis aenean et tortor at risus viverra. Vivamus at augue eget arcu. Rhoncus est pellentesque elit ullamcorper dignissim cras. Gravida dictum fusce ut placerat orci nulla pellentesque. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Id aliquet risus feugiat in ante metus dictum. Sagittis vitae et leo duis ut. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Imperdiet nulla malesuada pellentesque elit eget. Maecenas pharetra convallis posuere morbi leo urna molestie at. Eros donec ac odio tempor orci dapibus ultrices. Et ultrices neque ornare aenean. Interdum velit laoreet id donec. Dolor sit amet consectetur adipiscing elit pellentesque. Eleifend donec pretium vulputate sapien nec sagittis. Facilisi etiam dignissim diam quis enim lobortis. Imperdiet dui accumsan sit amet. Non tellus orci ac auctor augue mauris augue neque gravida. Maecenas sed enim ut sem viverra aliquet. Mauris pharetra et ultrices neque ornare aenean.
+          Tortor dignissim convallis aenean et tortor at risus viverra. Vivamus at augue eget arcu. Rhoncus est pellentesque elit ullamcorper dignissim cras. Gravida dictum fusce ut placerat orci nulla pellentesque. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Id aliquet risus feugiat in ante metus dictum. Sagittis vitae et leo duis ut. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Imperdiet nulla malesuada pellentesque elit eget. Maecenas pharetra convallis posuere morbi leo urna molestie at. Eros donec ac odio tempor orci dapibus ultrices.
           </p>
         </div>
 
