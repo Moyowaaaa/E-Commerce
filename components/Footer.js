@@ -1,7 +1,19 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 const Footer = () => {
-  
+  useEffect(() => {
+
+    function process() {
+      const d = new Date();
+      const year = d.getFullYear();
+      document.getElementById('demo').innerHTML = year;
+    }
+    process();
+
+  })
+
+
+
   return (
     <div className='lg:h-6/6 bottom-0 w-[100%]'>
 
@@ -20,7 +32,7 @@ const Footer = () => {
         <p>Terms and Conditions</p> */}
         <div className='w-12/12 justify-center flex col  text-center '> 
 
-<h2 className='text-base flex flex-col justify-center pt-12 pb-6'>Copyright &copy; Moyowa <div id="demo"></div></h2>
+<h2 className='text-base flex flex-row justify-center pt-12 pb-6'>Copyright &copy; Moyowa &nbsp; <span id="demo"></span></h2>
 
 
 </div>

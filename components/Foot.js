@@ -1,6 +1,17 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 const Foot = () => {
+  useEffect(() => {
+
+    function process() {
+      const d = new Date();
+      const year = d.getFullYear();
+      document.getElementById('demo').innerHTML = year;
+    }
+    process();
+
+  },[])
+
   return (
     <div className='w-full bottom-0 bg-[blue] text-white'>
          <div className='block flex flex-col  w-4/12 mx-8'>
@@ -10,7 +21,7 @@ const Foot = () => {
           </div>
           <div className='w-12/12 justify-center flex col  text-center '> 
 
-<h2 className='text-base flex flex-col justify-center pt-12 pb-6'>Copyright &copy; Moyowa <div id="demo"></div></h2>
+<h2 className='text-base flex flex-row justify-center pt-12 pb-6'>Copyright&copy; Moyowa &nbsp; <div id="demo"></div></h2>
 
 
 </div>
