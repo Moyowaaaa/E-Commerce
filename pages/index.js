@@ -133,7 +133,7 @@ export default function Home() {
         <div className='w-full border-2 border-[blue] h-[4rem] text-[white] bg-[blue]'>
         <div className='flex  justify-around h-full'>
           <Link href='/'>
-            <div className='w-4/12  cursor-pointer flex items-center'>
+            <div className='w-8/12  cursor-pointer flex items-center'>
         <h1 className='w-max hover:border-b-2 hover:border-[white]'>Peter&apos;s  Place</h1>
         </div>
         </Link>

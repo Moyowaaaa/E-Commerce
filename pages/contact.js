@@ -8,11 +8,13 @@ import Link from "next/link";
 import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import Foot from "../components/Foot";
+import Nav from "../components/Nav";
 
 const Contact = () => {
   return (
     <div>
-        <div className="inline-flex flex-row w-full cursor-pointer">
+      <Nav />
+        {/* <div className="inline-flex flex-row w-full cursor-pointer">
         <div className="  w-5/12 flex flex-row h-[auto] px-12 py-8 gap-5 h-[auto]">
             <Link  href="/"><span className='hover:border-b border-[blue]'>Home</span></Link>
             <Link  href='/store'><span className='hover:border-b border-[blue]'>Store</span></Link>
@@ -28,12 +30,12 @@ const Contact = () => {
             <span className="w-full flex  ">
               <UserIcon width={20} />
             </span>
-          </div>
+          </div> */}
 
           {/* <span className='flex'><UserIcon width={20}/> Login</span>
             <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
             */}
-        </div>
+        {/* </div> */}
 
 
         <div className="w-8/12  m-[auto] h-auto flex mt-[6rem]">
@@ -47,14 +49,14 @@ const Contact = () => {
                 <form className="px-4">
                     <div className="flex flex-col w-full">
                     <label>Name</label>
-                    <input type="text" className="border-b-2 border-[blue] px-2 outline-none"></input>
+                    <input type="text" className="border-b-2 focus:border-[blue] px-2 py-2 outline-none"></input>
                     </div>
 
 
                     <div className="w-full my-4 py-2">
                     <label className="" >Email</label><br/>
                     <input type="text" 
-                    className="mt-2 border-b-2 border-[blue] w-full px-2 outline-none"
+                    className="mt-2 border-b-2 focus:border-[blue] w-full px-2 py-2 outline-none"
                     ></input>
                     <br/>
                     </div>
@@ -63,13 +65,13 @@ const Contact = () => {
                     <div className="w-full w-full my-4">
                     <label>Subject</label>
                     <br/>
-                    <input type="text" className="mt-2 border-b-2 border-[blue] w-full px-2 outline-none"></input>
+                    <input type="text" className="mt-2 border-b-2 focus:border-[blue] w-full px-2 py-2 outline-none"></input>
                     <br/>
                     </div>
 
                     <label>Message</label>
                     <br/>
-                    <textarea className="w-full h-24 mt-2 border-b-2 border-[blue] resize-none px-2 pt-2 outline-none"></textarea> 
+                    <textarea className="w-full h-24 mt-2 border-b-2 focus:border-[blue] resize-none px-2 pt-2 outline-none"></textarea> 
 
                     <button className="p-4 bg-[blue] text-white my-6">Submit</button>  
                 </form>

@@ -8,19 +8,25 @@ import Link from "next/link";
 import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import Foot from "../components/Foot";
+import Nav from "../components/Nav";
+
 
 const About = () => {
+ const router = Router
+  
   return (
     <div>
       <div className="h-screen w-full  flex flex-col">
 
+        <Nav />
+
           
-        <div className="inline-flex flex-row w-full cursor-pointer">
+        {/* <div className="inline-flex flex-row w-full cursor-pointer">
         <div className="  w-5/12 flex flex-row h-[auto] px-12 py-8 gap-5 h-[auto]">
             <Link  href="/"><span className='hover:border-b border-[blue]'>Home</span></Link>
-            <Link  href='/store'><span className='hover:border-b border-[blue]'>Store</span></Link>
-            <Link href='/about'><span className='hover:border-b border-[blue]'>About us</span></Link>
-            <Link href='/contact'><span className='hover:border-b border-[blue]'>Contact</span></Link>
+            <Link  href='/store'><span className={`hover:border-b border-[blue] ${router.asPath == "/store" ? "border-b-2 border-[blue]" : ""}`}>Store</span></Link>
+            <Link href='/about'><span className={`hover:border-b border-[blue] ${router.asPath == "/about" ? "border-b-2 border-[blue]" : ""}`}>About us</span></Link>
+            <Link href='/contact'><span className={`hover:border-b border-[blue] ${router.asPath == "/contact" ? "border-b-2 border-[blue]" : ""}`}>Contact</span></Link>
           </div>
 
           <div className="flex flex-row items-center w-5/12 ] ">
@@ -29,19 +35,19 @@ const About = () => {
 
 
           <div className="flex items-center">
-            
+             */}
               {/* <UserIcon width={20}/><span>  Login</span> */}
-              <ShoppingCartIcon width={20} height={30}/>
+              {/* <ShoppingCartIcon width={20} height={30}/> */}
               
               
-          </div>
+          {/* </div> */}
 
 
 
           {/* <span className=''><UserIcon width={20}/> Login</span>
             <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
             */}
-        </div>
+        {/* </div> */}
 
         <div className="w-8/12 mx-[auto] h-[auto] pt-8 text-justify">
           <p className="py-4">
