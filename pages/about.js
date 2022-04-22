@@ -49,7 +49,7 @@ const About = () => {
             */}
         {/* </div> */}
 
-        <div className="w-8/12 mx-[auto] h-[auto] pt-8 text-justify">
+        <div className="w-10/12 lg:w-8/12 mx-[auto] h-[auto] pt-8 text-justify">
           <p className="py-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
