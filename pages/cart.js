@@ -115,7 +115,7 @@ const Cart = () => {
            <div className='flex flex-col mt-6'>
 
              {cart.map((item)=>(
-               <div>
+               <div key={item.id}>
                  <hr className='py-2'></hr>
                 <div className='flex flex-col lg:flex-row' key={item.id}>
                   <div className='w-11/12 lg:w-2/12 mx-4 mb-4'>
