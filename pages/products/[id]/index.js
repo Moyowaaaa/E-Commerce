@@ -2,9 +2,12 @@ import React,{useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 import Header from '../../../components/Header'
-import { PlusIcon,ChevronDoubleLeftIcon } from "@heroicons/react/solid";
+import { PlusIcon,ChevronDoubleLeftIcon,ShoppingCartIcon } from "@heroicons/react/solid";
 import Subscribe from '../../../components/Subscribe';
 import Footer from '../../../components/Footer';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../redux/cart.slice';
+import { useSelector } from 'react-redux';
 
 
 const Product = ({item}) => {
@@ -13,12 +16,22 @@ const Product = ({item}) => {
     const [productInfo, setProductInfo] = useState(true)
     const [returnPolicy, setReturnPolicy] = useState()
 
+    const dispatch = useDispatch();
+
+    const cart = useSelector((state) => state.cart);
+
+
+    const getItemsCount = () => {
+      return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+    };
+
+
+
 
 
     
  
 
- 
   return (
     <div className="h-[auto]">
 
@@ -29,13 +42,23 @@ const Product = ({item}) => {
         </div>
             </Link>
 
-          
 
+
+            <div className='flex w-6/12 mx-auto cursor-pointer'>
+            <Link href="/"><span className='hover:border-b border-[blue]'>Home/</span></Link>
+
+            <Link href="/store">
+                    <span className='hover:border-b border-[blue]'>Store</span></Link>/
+                    <span className='font-thin hover:border-b border-[blue]'>{item.title}</span>
+                    
+                    
+                    <Link href='/cart'><ShoppingCartIcon width={20} height={30} className='ml-auto cursor-pointer hover:border-b border-[blue]'/></Link><span className='hover:border-b-2 hover:border-[blue] text-[blue]'><sub>{getItemsCount()}</sub></span>
+                    </div>
 
             <div className="h-5/6 w-11/12 lg:w-6/12 mx-[auto]  flex flex-col lg:flex-row">
            
                 <div className="flex flex-col w-11/12 lg:w-7/12 h-full ">
-                <div className="cursor-pointer w-full "><p>
+                {/* <div className="cursor-pointer w-full "><p>
                     
                     
                     <Link href="/"><span className='hover:border-b border-[blue]'>Home/</span></Link>
@@ -43,9 +66,14 @@ const Product = ({item}) => {
                     
                     <Link href="/store">
                     <span className='hover:border-b border-[blue]'>Store</span></Link>/
-                    <span className='font-thin hover:border-b border-[blue]'>{item.title}</span></p></div>
-
+                    <span className='font-thin hover:border-b border-[blue]'>{item.title}</span>
+                    </p>
                     
+                    
+                    </div> */}
+
+                  
+
 
                     
 
@@ -72,7 +100,7 @@ const Product = ({item}) => {
                         />
                     </div>
 
-                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3">Add to Cart</button>
+                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3"onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
 
                     <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
 

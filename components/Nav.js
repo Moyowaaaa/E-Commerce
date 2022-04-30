@@ -7,9 +7,17 @@ import { useState, useEffect } from "react";
 import Router from "next/router";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useSelector } from 'react-redux';
+
 
 const Nav = () => {
     const router = useRouter();
+    const cart = useSelector((state) => state.cart);
+
+
+    const getItemsCount = () => {
+      return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+    };
 
   return (
     <div className='w-[100%]'>
@@ -30,7 +38,7 @@ const Nav = () => {
           <div className="flex items-center ">
             
               {/* <UserIcon width={20}/><span>  Login</span> */}
-              <span className="hover:border-b-2 hover:border-[blue]"><ShoppingCartIcon width={20} height={30}/></span>
+              <Link href='/cart'><span className="hover:border-b-2 hover:border-[blue]"><ShoppingCartIcon width={20} height={30}/><p>Cart ({getItemsCount()})</p></span></Link>
               
               
           </div>

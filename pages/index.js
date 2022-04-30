@@ -141,7 +141,7 @@ export default function Home() {
         <div className='flex flex-row items-center'>
         <Link href='/about'><span className=' mx-12 hover:border-b-2 hover:border-[white] cursor-pointer'>About</span></Link>
         <Link href='/store'><span className='mr-8 hover:border-b-2 hover:border-[white] cursor-pointer'>Shop</span></Link>
-        <span className='ml-6 hover:border-b-2 hover:border-[white] cursor-pointer'><ShoppingCartIcon width={20} height={30}/></span>
+        <Link href='/cart'><span className='ml-6 hover:border-b-2 hover:border-[white] cursor-pointer'><ShoppingCartIcon width={20} height={30}/></span></Link>
         </div>
 
         
