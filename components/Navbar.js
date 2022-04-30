@@ -27,14 +27,14 @@ const Navbar = ({ search }) => {
 
 
 
-        <div className='h-full  w-4/12 flex items-center'>
+        <div className='h-full hidden lg:block w-4/12 flex items-center'>
         <input type="text" placeholder="Search" className='text-black hidden border-b-2 outline-none focus:border-[blue] w-full py-2 lg:flex'  onChange = {(e) => search(e)}></input>
         </div>
 
-        <div className='ml-6 lg:ml-[3rem] cursor-pointer'></div>
+        <div className='ml-4 lg:ml-[3rem] cursor-pointer'></div>
         <Link href='/about'><span className='mx-4 lg:mx-12 hover:border-b-2 hover:border-[blue] cursor-pointer'>About</span></Link>
         <Link href='/store'><span className='mr-8 hover:border-b-2 hover:border-[blue] cursor-pointer'>Shop</span></Link>
-        <Link href='/cart'><span className='mr-2 lg:mr-0 lg:ml-4 lg:flex hover:border-b-2 hover:border-[blue] cursor-pointer'> <ShoppingCartIcon width={20} height={30}/> <sup className='text-[blue] '> {getItemsCount()}</sup>  </span></Link>
+        <Link href='/cart'><span className='mr-2 flex lg:mr-0 lg:ml-4 lg:flex hover:border-b-2 hover:border-[blue] cursor-pointer'> <ShoppingCartIcon width={20} height={30}/> <sup className='text-[blue] pt-2 lg:pt-0'> {getItemsCount()}</sup>  </span></Link>
 
 
 

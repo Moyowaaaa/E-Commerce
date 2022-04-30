@@ -62,7 +62,7 @@ const Store = () => {
         <Navbar search={search} />
 
         <Link href="/">
-            <div className='flex flex-row cursor-pointer ml-2 lg:ml-6'>
+            <div className='flex flex-row cursor-pointer ml-2 lg:ml-6 hover:underline hover:decoration-[blue]'>
         <ChevronDoubleLeftIcon width={30}/><span className='my-2'>Back</span>
         </div>
             </Link>

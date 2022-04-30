@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 const Product = ({item}) => {
     const [itemDetails,setItemDetails] = useState()
     const [close, setClose] = useState(false);
-    const [productInfo, setProductInfo] = useState(true)
+    const [productInfo, setProductInfo] = useState(false)
     const [returnPolicy, setReturnPolicy] = useState()
 
     const dispatch = useDispatch();
@@ -36,15 +36,24 @@ const Product = ({item}) => {
     <div className="h-[auto]">
 
         {/* <Header /> */}
+
+        <div className='flex items-center'>
         <Link href="/store">
             <div className='flex flex-row cursor-pointer ml-4 lg:ml-6'>
         <ChevronDoubleLeftIcon width={30}/><span className='my-2'>Back</span>
         </div>
             </Link>
 
+            <Link href='/cart'>
+            <div className='flex items-center lg:hidden ml-[15rem]'>
+           <ShoppingCartIcon width={20} /><sup className='text-[blue] pt-2 lg:pt-0'> {getItemsCount()}</sup>
+           </div>
+           </Link>
+            </div>
 
 
-            <div className='flex w-6/12 mx-auto cursor-pointer'>
+
+            <div className='flex w-10/12 lg:w-6/12 mx-auto cursor-pointer'>
             <Link href="/"><span className='hover:border-b border-[blue]'>Home/</span></Link>
 
             <Link href="/store">
@@ -52,7 +61,7 @@ const Product = ({item}) => {
                     <span className='font-thin hover:border-b border-[blue]'>{item.title}</span>
                     
                     
-                    <Link href='/cart'><ShoppingCartIcon width={20} height={30} className='ml-auto cursor-pointer hover:border-b border-[blue]'/></Link><span className='hover:border-b-2 hover:border-[blue] text-[blue]'><sub>{getItemsCount()}</sub></span>
+                    <Link href='/cart'><ShoppingCartIcon width={20} height={30} className='ml-auto cursor-pointer hover:border-b border-[blue] hidden lg:flex'/></Link><span className='hover:border-b-2 hover:border-[blue] text-[blue] hidden lg:flex'><sub>{getItemsCount()}</sub></span>
                     </div>
 
             <div className="h-5/6 w-11/12 lg:w-6/12 mx-[auto]  flex flex-col lg:flex-row">
@@ -84,7 +93,7 @@ const Product = ({item}) => {
 
 
 
-                <div className="flex flex-col w-11/12 lg:w-5/12 h-5/6 my-[auto] lg:pl-6 py-[6rem]">
+                <div className="flex flex-col w-12/12 lg:w-5/12 h-5/6 my-[auto] lg:pl-6 py-[6rem]">
 
                     <h1 className="text-3xl mb-6 font-bold">{item.title}</h1>
                     {/* <p className="text-sm my-6">Product Id</p> */}

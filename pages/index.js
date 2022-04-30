@@ -12,6 +12,7 @@ import NewProduct from '../components/NewProduct'
 import Subscribe from '../components/Subscribe'
 import LoginModal from '../components/LoginModal'
 import { UserIcon, ShoppingCartIcon } from "@heroicons/react/solid";
+import { useSelector } from 'react-redux';
 
 
 
@@ -22,6 +23,13 @@ export default function Home() {
     const[newItem, setNewItem] = useState()
     const [newProducts, setNewProducts] = useState()
     const [close, setClose] = useState(false);
+    const cart = useSelector((state) => state.cart);
+
+
+    const getItemsCount = () => {
+      return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+    };
+
     // const random = Math.floor(Math.random() * 10);
   
   
@@ -133,15 +141,15 @@ export default function Home() {
         <div className='w-full border-2 border-[blue] h-[4rem] text-[white] bg-[blue]'>
         <div className='flex  justify-around h-full'>
           <Link href='/'>
-            <div className='w-8/12  cursor-pointer flex items-center'>
+            <div className='lg:w-8/12  cursor-pointer flex items-center'>
         <h1 className='w-max hover:border-b-2 hover:border-[white]'>Peter&apos;s  Place</h1>
         </div>
         </Link>
 
         <div className='flex flex-row items-center'>
-        <Link href='/about'><span className=' mx-12 hover:border-b-2 hover:border-[white] cursor-pointer'>About</span></Link>
-        <Link href='/store'><span className='mr-8 hover:border-b-2 hover:border-[white] cursor-pointer'>Shop</span></Link>
-        <Link href='/cart'><span className='ml-6 hover:border-b-2 hover:border-[white] cursor-pointer'><ShoppingCartIcon width={20} height={30}/></span></Link>
+        <Link href='/about'><span className=' mx-4 lg:mx-12 hover:border-b-2 hover:border-[white] cursor-pointer'>About</span></Link>
+        <Link href='/store'><span className=' mr-4 lg:mr-8 hover:border-b-2 hover:border-[white] cursor-pointer'>Shop</span></Link>
+        <Link href='/cart'><span className='ml-0 flex lg:ml-6 hover:border-b-2 hover:border-[white] cursor-pointer'><ShoppingCartIcon width={20} height={30}/><sup className='pt-2'>{getItemsCount()}</sup></span></Link>
         </div>
 
         
