@@ -45,7 +45,7 @@ const Product = ({item}) => {
             </Link>
 
             <Link href='/cart'>
-            <div className='flex items-center lg:hidden ml-[15rem]'>
+            <div className='flex items-center lg:hidden ml-[11rem]'>
            <ShoppingCartIcon width={20} /><sup className='text-[blue] pt-2 lg:pt-0'> {getItemsCount()}</sup>
            </div>
            </Link>

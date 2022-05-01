@@ -38,7 +38,7 @@ const Cart = () => {
 
              <Link href="/store">
              <div className='flex cursor-pointer  items-center'>
-               <ChevronDoubleLeftIcon  width={30}/><span className='my-2 hover:underline  hover:decoration-[blue]'>Back to store</span>
+               <ChevronDoubleLeftIcon  width={30}/><span className='my-2 hover:underline  hover:decoration-[blue]'>Store</span>
              </div>
              </Link>
 
