@@ -45,8 +45,8 @@ const Product = ({item}) => {
             </Link>
 
             <Link href='/cart'>
-            <div className='flex items-center lg:hidden ml-[11rem]'>
-           <ShoppingCartIcon width={20} /><sup className='text-[blue] pt-2 lg:pt-0'> {getItemsCount()}</sup>
+            <div className='flex items-center lg:hidden ml-[8rem]'>
+           <ShoppingCartIcon width={20} />
            </div>
            </Link>
             </div>
@@ -109,7 +109,9 @@ const Product = ({item}) => {
                         />
                     </div>
 
-                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3"onClick={() => dispatch(addToCart(item))}>Add to Cart</button>
+                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3"onClick={() => dispatch(addToCart(item))}><span>Add to Cart</span><span className='ml-2 flex md:hidden'><ShoppingCartIcon width={15}/></span><span className='flex md:hidden'>{getItemsCount()}</span></button>
+
+
 
                     <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
 
