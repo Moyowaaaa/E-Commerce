@@ -14,28 +14,6 @@ const Contact = () => {
   return (
     <div>
       <Nav />
-        {/* <div className="inline-flex flex-row w-full cursor-pointer">
-        <div className="  w-5/12 flex flex-row h-[auto] px-12 py-8 gap-5 h-[auto]">
-            <Link  href="/"><span className='hover:border-b border-[blue]'>Home</span></Link>
-            <Link  href='/store'><span className='hover:border-b border-[blue]'>Store</span></Link>
-            <Link href='/about'><span className='hover:border-b border-[blue]'>About us</span></Link>
-            <Link href='/contact'><span className='hover:border-b border-[blue]'>Contact</span></Link>
-          </div>
-
-          <div className="flex flex-row items-center w-5/12  ">
-            <p className="text-center text-2xl">E commerce</p>
-          </div>
-
-          <div className="flex flex-row  w-2/12">
-            <span className="w-full flex  ">
-              <UserIcon width={20} />
-            </span>
-          </div> */}
-
-          {/* <span className='flex'><UserIcon width={20}/> Login</span>
-            <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
-            */}
-        {/* </div> */}
 
 
         <div className="w-8/12  m-[auto] h-auto flex flex-col lg:flex-row mt-[6rem]">

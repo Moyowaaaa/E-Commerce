@@ -37,7 +37,6 @@ const Nav = () => {
       
           <div className="flex items-center ">
             
-              {/* <UserIcon width={20}/><span>  Login</span> */}
               <Link href='/cart'><span className="hover:border-b-2 hover:border-[blue]"><ShoppingCartIcon width={20} height={30}/><p>Cart ({getItemsCount()})</p></span></Link>
               
               
@@ -47,9 +46,7 @@ const Nav = () => {
 
 
 
-          {/* <span className=''><UserIcon width={20}/> Login</span>
-            <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
-            */}
+   
         </div>
         <p className="text-center text-2xl lg:hidden">E commerce</p>
 

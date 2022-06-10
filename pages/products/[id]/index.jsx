@@ -35,7 +35,7 @@ const Product = ({item}) => {
   return (
     <div className="h-[auto]">
 
-        {/* <Header /> */}
+      
 
         <div className='flex items-center'>
         <Link href="/store">
@@ -67,20 +67,7 @@ const Product = ({item}) => {
             <div className="h-5/6 w-11/12 lg:w-6/12 mx-[auto]  flex flex-col lg:flex-row">
            
                 <div className="flex flex-col w-11/12 lg:w-7/12 h-full ">
-                {/* <div className="cursor-pointer w-full "><p>
-                    
-                    
-                    <Link href="/"><span className='hover:border-b border-[blue]'>Home/</span></Link>
-                    
-                    
-                    <Link href="/store">
-                    <span className='hover:border-b border-[blue]'>Store</span></Link>/
-                    <span className='font-thin hover:border-b border-[blue]'>{item.title}</span>
-                    </p>
-                    
-                    
-                    </div> */}
-
+              
                   
 
 
@@ -96,7 +83,7 @@ const Product = ({item}) => {
                 <div className="flex flex-col w-12/12 lg:w-5/12 h-5/6 my-[auto] lg:pl-6 py-[6rem]">
 
                     <h1 className="text-3xl mb-6 font-bold">{item.title}</h1>
-                    {/* <p className="text-sm my-6">Product Id</p> */}
+            
 
                     <h2 className="mb-[2rem] font-bold ">${item.price}</h2>
 

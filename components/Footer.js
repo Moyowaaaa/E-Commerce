@@ -27,9 +27,7 @@ const Footer = () => {
           </div>
 
 
-        {/* <p>FAQ</p>
-        <p>Forum</p>
-        <p>Terms and Conditions</p> */}
+     
         <div className='w-12/12 justify-center flex col  text-center '> 
 
 <h2 className='text-base flex flex-row justify-center pt-12 pb-6'>Copyright &copy; Moyowa &nbsp; <span id="demo"></span></h2>

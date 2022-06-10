@@ -7,7 +7,7 @@ import Subscribe from "../components/Subscribe";
 import Footer from "../components/Footer";
 import Foot from "../components/Foot";
 import Nav from "../components/Nav";
-// Importing actions from  cart.slice.js
+
 import {
   incrementQuantity,
   decrementQuantity,
@@ -50,61 +50,6 @@ const Cart = () => {
        <Link href="/store"><p className='cursor-pointer hover:border-b-2 border-[blue]'>Continue Shopping</p></Link>
     </div> ) : (
        <>
-         {/* <div >
-           <div>Image</div>
-           <div>Product</div>
-           <div>Price</div>
-           <div>Quantity</div>
-           <div>Actions</div>
-           <div>Total Price</div>
-         </div> */}
-           {/* <div>
-               <Image src={item.image} height="90" width="65" />
-             </div> */}
-
-         {/* {cart.map((item) => (
-           <div key={item.id} >
-           
-             <p>{item.title}</p>
-             <p>$ {item.price}</p>
-             <p>{item.quantity}</p>
-             <div >
-             <button onClick={() => dispatch(incrementQuantity(item.id))}>
-                  +
-                </button>
-                <button onClick={() => dispatch(decrementQuantity(item.id))}>
-                  -
-                </button>
-                <button onClick={() => dispatch(removeFromCart(item.id))}>
-                  x
-                </button>
-             </div>
-             <p>$ {item.quantity * item.price}</p>
-           </div>
-           
-           
-         ))} */}
-
-{/* {cart.map((item) => (
-         <div className='flex flex-row items-center border-2 border-[blue] w-8/12 h-[10rem] my-2 gap-6' key={item.id}>
-
-           <div className='flex flex-row ml-12 w-9/12'>
-           <p>{item.title}</p>
-             <p>$ {item.price}</p>
-             <p>{item.quantity}</p>
-           </div>
-
-           <div className='flex flex-row w-3/12'>
-             <button className='h-auto w-auto p-3 bg-[blue] text-white text-xl' onClick={() => dispatch(incrementQuantity(item.id))}>+</button>
-              <button className='h-auto w-auto p-3 bg-[black] text-white text-xl mx-6' onClick={() => dispatch(decrementQuantity(item.id))}>-</button>
-              <button className='h-auto w-auto p-3 bg-[red] text-white text-xl' onClick={() => dispatch(removeFromCart(item.id))}>x</button>
-           </div>
-         </div>
-
-          ))}  */}
-
-          
-         {/* <h2>Grand Total: $ {getTotalPrice()}</h2> */}
 
 
 

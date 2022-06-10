@@ -20,35 +20,6 @@ const About = () => {
 
         <Nav />
 
-          
-        {/* <div className="inline-flex flex-row w-full cursor-pointer">
-        <div className="  w-5/12 flex flex-row h-[auto] px-12 py-8 gap-5 h-[auto]">
-            <Link  href="/"><span className='hover:border-b border-[blue]'>Home</span></Link>
-            <Link  href='/store'><span className={`hover:border-b border-[blue] ${router.asPath == "/store" ? "border-b-2 border-[blue]" : ""}`}>Store</span></Link>
-            <Link href='/about'><span className={`hover:border-b border-[blue] ${router.asPath == "/about" ? "border-b-2 border-[blue]" : ""}`}>About us</span></Link>
-            <Link href='/contact'><span className={`hover:border-b border-[blue] ${router.asPath == "/contact" ? "border-b-2 border-[blue]" : ""}`}>Contact</span></Link>
-          </div>
-
-          <div className="flex flex-row items-center w-5/12 ] ">
-            <p className="text-center text-2xl">E commerce</p>
-          </div>
-
-
-          <div className="flex items-center">
-             */}
-              {/* <UserIcon width={20}/><span>  Login</span> */}
-              {/* <ShoppingCartIcon width={20} height={30}/> */}
-              
-              
-          {/* </div> */}
-
-
-
-          {/* <span className=''><UserIcon width={20}/> Login</span>
-            <span className='ml-6'><ShoppingCartIcon width={20} height={30}/></span>
-            */}
-        {/* </div> */}
-
         <div className="w-10/12 lg:w-8/12 mx-[auto] h-[auto] pt-8 text-justify">
           <p className="py-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
