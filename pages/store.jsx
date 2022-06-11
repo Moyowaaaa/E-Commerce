@@ -9,7 +9,7 @@ import Subscribe from "../components/Subscribe";
 // import Footer from '../components/Footer';
 import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
-import { SpinnerCircular } from "spinners-react";
+import { SpinnerCircularFixed } from "spinners-react";
 import Shop from "../components/Store";
 
 const Store = () => {

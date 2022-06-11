@@ -13,7 +13,7 @@ import Subscribe from "../components/Subscribe";
 import LoginModal from "../components/LoginModal";
 import { UserIcon, ShoppingCartIcon } from "@heroicons/react/solid";
 import { useSelector } from "react-redux";
-import { SpinnerCircular } from "spinners-react";
+import { SpinnerCircularFixed } from "spinners-react";
 import Showcase from "../components/Showcase";
 
 export default function Home() {

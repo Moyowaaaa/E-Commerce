@@ -1,7 +1,7 @@
 import React from "react";
 import { UserIcon, ShoppingCartIcon } from "@heroicons/react/solid";
 import { useSelector } from "react-redux";
-import { SpinnerCircular } from "spinners-react";
+import { SpinnerCircularFixed } from "spinners-react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -44,7 +44,7 @@ const Showcase = ({ products, loader, openStore }) => {
             loader ? "hidden" : "block"
           }`}
         >
-          <SpinnerCircular
+          <SpinnerCircularFixed
             enabled={true}
             secondaryColor="white"
             size="200"
