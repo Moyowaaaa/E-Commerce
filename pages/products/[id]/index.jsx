@@ -8,6 +8,8 @@ import Footer from '../../../components/Footer';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cart.slice';
 import { useSelector } from 'react-redux';
+import { SpinnerCircularFixed } from "spinners-react";
+
 
 
 const Product = ({item}) => {
@@ -15,6 +17,7 @@ const Product = ({item}) => {
     const [close, setClose] = useState(false);
     const [productInfo, setProductInfo] = useState(false)
     const [returnPolicy, setReturnPolicy] = useState()
+    const [loader, setLoader] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -24,6 +27,10 @@ const Product = ({item}) => {
     const getItemsCount = () => {
       return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
     };
+
+    useEffect(() => {
+        setLoader(false);
+      });
 
 
 
@@ -64,62 +71,80 @@ const Product = ({item}) => {
                     <Link href='/cart'><ShoppingCartIcon width={20} height={30} className='ml-auto cursor-pointer hover:border-b border-[blue] hidden lg:flex'/></Link><span className='hover:border-b-2 hover:border-[blue] text-[blue] hidden lg:flex'><sub>{getItemsCount()}</sub></span>
                     </div>
 
-            <div className="h-5/6 w-11/12 lg:w-6/12 mx-[auto]  flex flex-col lg:flex-row">
+                    {item ? <div className="h-5/6 w-11/12 lg:w-6/12 mx-[auto]  flex flex-col lg:flex-row">
            
-                <div className="flex flex-col w-11/12 lg:w-7/12 h-full ">
-              
-                  
-
-
-                    
-
-                <div className="lg:h-5/6 w-10/12 mx-[auto] py-8 lg:py-[6rem] flex flex-col items-center justify-center my-12 ">
-                    <img src={item.image} />
-                </div>
-                </div>
-
-
-
-                <div className="flex flex-col w-12/12 lg:w-5/12 h-5/6 my-[auto] lg:pl-6 py-[6rem]">
-
-                    <h1 className="text-3xl mb-6 font-bold">{item.title}</h1>
-            
-
-                    <h2 className="mb-[2rem] font-bold ">${item.price}</h2>
-
-                    <div className='mb-2'>
-                        <h2>Quantity</h2>
-                        <input type="number" 
-                        className='w-full outline-black border-2 border-[black]'
-                        min={1}
-                        
-                        />
-                    </div>
-
-                    <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3"onClick={() => dispatch(addToCart(item))}><span>Add to Cart</span><span className='ml-2 flex md:hidden'><ShoppingCartIcon width={15}/></span><span className='flex md:hidden'>{getItemsCount()}</span></button>
-
-
-
-                    <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
-
-                    <div className="pt-[1rem]">
-                        <p className='my-3 font-bold cursor-pointer border-2 border-[blue]' onClick={() => {setProductInfo(!productInfo); setReturnPolicy(false)}}>Product Info</p>
-                        <h3 className={`${productInfo ? 'bock':'hidden'}`} >{item.description}</h3>
-                    
-                    </div>
-
-
-
-                    <div className='mt-[1rem]'>
-                        <p className='mt-1 font-bold cursor-pointer border-2 border-[blue]' onClick={() => {setReturnPolicy(!returnPolicy); setProductInfo(false)}}>Return Policy</p>
-                        <p className={`${returnPolicy ? 'bock':'hidden'}`} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nostrum labore officia eligendi eum quidem voluptates alias nobis fugiat exercitationem ipsa omnis eius non consequuntur error, praesentium soluta sunt assumenda.</p>
-                    </div>
-
-
-                    
-                </div>
+           <div className="flex flex-col w-11/12 lg:w-7/12 h-full ">
+         
              
-            </div>
+
+
+               
+
+           <div className="lg:h-5/6 w-10/12 mx-[auto] py-8 lg:py-[6rem] flex flex-col items-center justify-center my-12 ">
+               <img src={item.image} />
+           </div>
+           </div>
+
+
+
+           <div className="flex flex-col w-12/12 lg:w-5/12 h-5/6 my-[auto] lg:pl-6 py-[6rem]">
+
+               <h1 className="text-3xl mb-6 font-bold">{item.title}</h1>
+       
+
+               <h2 className="mb-[2rem] font-bold ">${item.price}</h2>
+
+               <div className='mb-2'>
+                   <h2>Quantity</h2>
+                   <input type="number" 
+                   className='w-full outline-black border-2 border-[black]'
+                   min={1}
+                   
+                   />
+               </div>
+
+               <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3"onClick={() => dispatch(addToCart(item))}><span>Add to Cart</span><span className='ml-2 flex md:hidden'><ShoppingCartIcon width={15}/></span><span className='flex md:hidden'>{getItemsCount()}</span></button>
+
+
+
+               <button className="bg-[black] text-base text-[white] flex items-center h-12 justify-center">Buy Now</button>
+
+               <div className="pt-[1rem]">
+                   <p className='my-3 font-bold cursor-pointer border-2 border-[blue]' onClick={() => {setProductInfo(!productInfo); setReturnPolicy(false)}}>Product Info</p>
+                   <h3 className={`${productInfo ? 'bock':'hidden'}`} >{item.description}</h3>
+               
+               </div>
+
+
+
+               <div className='mt-[1rem]'>
+                   <p className='mt-1 font-bold cursor-pointer border-2 border-[blue]' onClick={() => {setReturnPolicy(!returnPolicy); setProductInfo(false)}}>Return Policy</p>
+                   <p className={`${returnPolicy ? 'bock':'hidden'}`} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nostrum labore officia eligendi eum quidem voluptates alias nobis fugiat exercitationem ipsa omnis eius non consequuntur error, praesentium soluta sunt assumenda.</p>
+               </div>
+
+
+               
+           </div>
+        
+       </div>
+       : <div
+       className={`w-full h-screen flex items-center justify-center ${
+         loader ? "hidden" : "block"
+       }`}
+     >
+       <SpinnerCircularFixed
+         enabled={true}
+         secondaryColor="white"
+         color="blue"
+         speed="150"
+         // className="h-[300px] w-[300px]"
+         size="200"
+       />
+     </div>
+     
+     }
+
+            
             <Subscribe />
             <Footer />
 

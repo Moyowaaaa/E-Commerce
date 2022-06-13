@@ -4,10 +4,16 @@ import { useSelector } from "react-redux";
 import { SpinnerCircularFixed } from "spinners-react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Router from "next/router";
 
 import Link from "next/link";
 
 const Showcase = ({ products, loader, openStore }) => {
+
+
+  const showProduct = () => {
+    Router.push(`/products/${id}`);
+  }
   return (
     <div className="     w-full">
       {products ? (
