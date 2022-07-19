@@ -15,58 +15,36 @@ import { UserIcon, ShoppingCartIcon } from "@heroicons/react/solid";
 import { useSelector } from "react-redux";
 import { SpinnerCircularFixed } from "spinners-react";
 import Showcase from "../components/Showcase";
+import useFetch from "../utils/useFetch";
+const url= "https://fakestoreapi.com/products?limit=3"
 
 export default function Home() {
-  const [products, setProducts] = useState(null);
+
+
+  
   const [newItem, setNewItem] = useState();
   const [newProducts, setNewProducts] = useState();
   const [close, setClose] = useState(false);
   const cart = useSelector((state) => state.cart);
   const [loader, setLoader] = useState(false);
+  
+
+  
+
+  const {products, loading,error} = useFetch({url})
+  
 
   const getItemsCount = () => {
     return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
 
-  // const random = Math.floor(Math.random() * 10);
+  
 
   useEffect(() => {
     setLoader(false);
   });
 
-  useEffect(() => {
-    const random = Math.floor(Math.random() * 10);
-    console.log(random);
 
-    async function showCase() {
-      try {
-        const response = await axios.get(
-          "https://fakestoreapi.com/products?limit=3"
-        );
-        console.log(response.data);
-        setProducts(response.data);
-        setLoader(true);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    async function newItem() {
-      try {
-        const response = await axios.get(
-          `https://fakestoreapi.com/products/${random}`
-        );
-        console.log(response.data);
-        setNewItem(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    showCase();
-
-    newItem();
-  }, []);
 
   function closeModal() {
     setClose(false);
@@ -128,6 +106,8 @@ export default function Home() {
           </button>
         </div>
       </div>
+
+      {/* <NewProduct /> */}
 
       <div className=" mt-4 justify-center">
         <h1 className="text-2xl text-center ">
