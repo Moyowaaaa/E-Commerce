@@ -4,10 +4,20 @@ import Router from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import useFetch from "../utils/useFetch";
+const random = Math.floor(Math.random() * 10);
+const url = "https://fakestoreapi.com/products";
 
 const NewProduct = ({ newProduct }) => {
+
   const random = Math.floor(Math.random() * 10);
-  const [newProducts, setNewProducts] = useState();
+
+  const {products, loading,error} = useFetch({url:`${url}/${random}`});
+
+  // const newProduct = products;
+
+  console.log("showcase", products);
+  const [newProducts, setNewProducts] = useState(products);
 
   return (
     <div>
@@ -17,20 +27,20 @@ const NewProduct = ({ newProduct }) => {
         </div>
 
         <div className="w-full lg:w-6/12 bg-[blue] flex flex-col items-center justify-center">
-          <h2>{newProduct.title}</h2>
+          <h2>{newProducts?.title}</h2>
         </div>
       </div>
     </div>
   );
 };
-export const getServerSideProps = async (random) => {
-  const res = await fetch(`https://fakestoreapi.com/products/${random}`);
-  const newProduct = await res.json();
+// export const getServerSideProps = async (random) => {
+//   const res = await fetch(`https://fakestoreapi.com/products/${random}`);
+//   const newProduct = await res.json();
 
-  return {
-    props: {
-      newProduct,
-    },
-  };
-};
+//   return {
+//     props: {
+//       newProduct,
+//     },
+//   };
+// };
 export default NewProduct;

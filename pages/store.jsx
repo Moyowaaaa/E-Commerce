@@ -11,31 +11,19 @@ import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
 import { SpinnerCircularFixed } from "spinners-react";
 import Shop from "../components/Store";
+import useFetch from "../utils/useFetch";
+const url = "https://fakestoreapi.com/products"
 
 const Store = () => {
-  const [products, setProducts] = useState();
+  
   const [searchValue, setSearchValue] = useState("");
   const [loader, setLoader] = useState(false);
   const search = (e) => {
     setSearchValue(e.target.value);
   };
 
-  useEffect(() => {
-    async function getProducts() {
-      try {
-        const res = await axios.get("https://fakestoreapi.com/products");
-        console.log(res.data);
-        setProducts(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    getProducts();
-  });
-  useEffect(() => {
-    setLoader(false);
-  });
+  const {products, loading,error} = useFetch({url})
+  
 
   return (
     <div className="h-screen">

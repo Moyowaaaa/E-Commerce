@@ -137,7 +137,7 @@ const Product = ({item}) => {
          secondaryColor="white"
          color="blue"
          speed="150"
-         // className="h-[300px] w-[300px]"
+         
          size="200"
        />
      </div>
