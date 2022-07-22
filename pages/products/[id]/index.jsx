@@ -94,14 +94,7 @@ const Product = ({item}) => {
 
                <h2 className="mb-[2rem] font-bold ">${item.price}</h2>
 
-               <div className='mb-2'>
-                   <h2>Quantity</h2>
-                   <input type="number" 
-                   className='w-full outline-black border-2 border-[black]'
-                   min={1}
-                   
-                   />
-               </div>
+          
 
                <button className="bg-[blue] text-base text-[white] flex items-center h-12 justify-center mb-3"onClick={() => dispatch(addToCart(item))}><span>Add to Cart</span><span className='ml-2 flex md:hidden'><ShoppingCartIcon width={15}/></span><span className='flex md:hidden'>{getItemsCount()}</span></button>
 

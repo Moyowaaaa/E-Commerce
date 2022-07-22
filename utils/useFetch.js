@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 const useFetch = ({url}) => {
-    // const [data, setData] = useState(null);
+
     const [products, setProducts] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -13,7 +13,7 @@ const useFetch = ({url}) => {
         async function showCase() {
             try{
                 const reponse = await axios.get(url)
-                // setData(reponse.data)
+             
                 setProducts(reponse.data)
                 setLoading(true)
             }catch (error) {
