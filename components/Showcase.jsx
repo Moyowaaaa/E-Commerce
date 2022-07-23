@@ -53,9 +53,9 @@ const Showcase = ({ products, loader, openStore }) => {
           <SpinnerCircularFixed
             enabled={true}
             secondaryColor="white"
-            size="200"
+            size="100"
             color="blue"
-            speed="150"
+            speed="100"
             className="h-100 w-100"
           />
         </div>

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Link from "next/link";
-// import Footer from '../components/Footer'
+
 import { PlusIcon, ChevronDoubleLeftIcon } from "@heroicons/react/solid";
 import axios from "axios";
 import Subscribe from "../components/Subscribe";
-// import Footer from '../components/Footer';
+
 import Navbar from "../components/Navbar";
-import Contact from "../components/Contact";
+
 import { SpinnerCircularFixed } from "spinners-react";
 import Shop from "../components/Store";
 import useFetch from "../utils/useFetch";

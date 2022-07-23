@@ -45,13 +45,13 @@ const Store = ({ products, searchValue, loader }) => {
             loader ? "hidden" : "block"
           }`}
         >
-          <SpinnerCircularFixed
+           <SpinnerCircularFixed
             enabled={true}
             secondaryColor="white"
+            size="100"
             color="blue"
-            speed="150"
-            // className="h-[300px] w-[300px]"
-            size="200"
+            speed="100"
+            className="h-100 w-100"
           />
         </div>
       )}
